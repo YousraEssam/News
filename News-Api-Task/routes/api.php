@@ -36,13 +36,13 @@ $api->version('v1', function ($api) {
 });
 
 $api->version('v1', function ($api) {
-    $api->post('news/edit/{id}', 'App\Api\Controllers\NewsController@update');
+    $api->post('news/{news}/edit', 'App\Api\Controllers\NewsController@update')->middleware('bindings');
 });
 
 $api->version('v1', function ($api) {
-    $api->get('news/{id}', 'App\Api\Controllers\NewsController@show');
+    $api->get('news/{news}', 'App\Api\Controllers\NewsController@show')->middleware('bindings');
 });
 
 $api->version('v1', function ($api) {
-    $api->get('news/delete/{id}', 'App\Api\Controllers\NewsController@softDelete');
+    $api->delete('news/{id}', 'App\Api\Controllers\NewsController@softDelete');
 });

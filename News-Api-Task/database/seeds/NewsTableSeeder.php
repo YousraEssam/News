@@ -22,16 +22,6 @@ class NewsTableSeeder extends Seeder
             'description' => 'second manchette',
             'writer_id' => 2,
         ],
-        [
-            'name' => 'third news',
-            'description' => 'third manchette',
-            'writer_id' => 1,
-        ],
-        [
-            'name' => 'fourth news',
-            'description' => 'fourth manchette',
-            'writer_id' => 2,
-        ]
         ]);
     }
 }

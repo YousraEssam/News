@@ -9,10 +9,16 @@ class News extends Model
 {
     use SoftDeletes;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'writer_id'
+    ];
+    
     protected $table = 'news';
 
     public function writer()
     {
-        return $this->belongsTo('App\Writers');
+        return $this->belongsTo('App\Writer');
     }
 }

@@ -43,17 +43,11 @@ class NewsController extends BaseController
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(News $news)
     {
-        $news = News::findOrFail($id);
-        if($news){
-            return $this->response->array($news->toArray());
-        }else{
-            return $this->response->errorNotFound();
-        }
+        return $this->response->array($news->toArray());
     }
 
     /**
@@ -63,10 +57,8 @@ class NewsController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, News $news)
     {
-        $news = News::find($id);
-
         $news->name = $request->input('name');
 
         $news->description = $request->input('description');
@@ -80,7 +72,7 @@ class NewsController extends BaseController
 
     /**
      * Remove the specified resource from storage.
-     *
+     *     
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -88,7 +80,7 @@ class NewsController extends BaseController
     {
         $news = News::destroy($id);
 
-        $deleted_news = News::onlyTrashed($id)->get();
+        $deleted_news = News::onlyTrashed()->get();
 
         return $this->response->array($deleted_news->toArray());
 

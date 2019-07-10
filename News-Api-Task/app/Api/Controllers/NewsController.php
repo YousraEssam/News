@@ -8,6 +8,11 @@ use App\News;
 use App\Writer;
 use App\Transformers\NewsTransformer;
 
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Dingo\Api\Exception\DeleteResourceFailedException;
+use Dingo\Api\Exception\ResourceException;
+use Dingo\Api\Exception\StoreResourceFailedException;
+use Dingo\Api\Exception\UpdateResourceFailedException;
 /**
  * News resource representation.
  *
@@ -52,6 +57,20 @@ class NewsController extends BaseController
      */
     public function store(Request $request)
     {
+        // $rules = [
+        //     'title' => 'required',
+        //     'description' => 'required',
+        //     'writer_id' => 'required'
+        // ];
+
+        // $payload = app('request')->only('title', 'description','writer_id');
+
+        // $validator = app('validator')->make($payload, $rules);
+
+        // if ($validator->fails()) {
+        //     throw new Dingo\Api\Exception\StoreResourceFailedException('Could not create new user.', $validator->errors());
+        // }
+
         $news = new News;
         $news->title = $request->input('title');
         $news->description = $request->input('description');

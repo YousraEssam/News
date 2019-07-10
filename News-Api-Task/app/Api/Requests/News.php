@@ -3,6 +3,13 @@
 namespace App\Http\Requests;
 
 use Dingo\Api\Http\FormRequest;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+use Dingo\Api\Exception\ValidationHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class News extends FormRequest
 {

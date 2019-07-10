@@ -13,32 +13,32 @@ class NewsTableSeeder extends Seeder
     {
         DB::table('news')->insert([
         [
-            'name' => 'first news',
+            'title' => 'first news',
             'description' => 'first manchette',
             'writer_id' => 1,
         ],
         [
-            'name' => 'second news',
+            'title' => 'second news',
             'description' => 'second manchette',
             'writer_id' => 2,
         ],
         [
-            'name' => 'third news',
+            'title' => 'third news',
             'description' => 'third manchette',
             'writer_id' => 1,
         ],
         [
-            'name' => 'fourth news',
+            'title' => 'fourth news',
             'description' => 'fourth manchette',
             'writer_id' => 2,
         ],
         [
-            'name' => 'fifth news',
+            'title' => 'fifth news',
             'description' => 'fifth manchette',
             'writer_id' => 1,
         ],
         [
-            'name' => 'sixth news',
+            'title' => 'sixth news',
             'description' => 'sixth manchette',
             'writer_id' => 2,
         ],

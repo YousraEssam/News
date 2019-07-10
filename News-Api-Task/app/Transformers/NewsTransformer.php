@@ -11,7 +11,7 @@ class NewsTransformer extends TransformerAbstract
     {
         return [
             'id' => (int) $news->id,
-            'name' => $news->name,
+            'title' => $news->title,
             'description' =>$news->description,
             'writer_name' => $news->writer->first_name . " " . $news->writer->second_name,
         ];
